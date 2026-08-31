@@ -78,6 +78,8 @@ UserSchema.pre("save", async function(){
   try {
     this.password = await bcrypt.hash(this.password, 10); //10 here is salt namak nahe dusra wla
 
+    console.log("password hashed", this.password);
+
   } catch (error) {
     console.log("faild bycript password")
   }
